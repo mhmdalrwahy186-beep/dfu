@@ -1,0 +1,134 @@
+@import "tailwindcss";
+
+/*
+ * دفء design tokens — sampled from the official logo:
+ *   background cream #F7EDE3 · chocolate #624533 · ribbon rose #C18875 · sand #D5B79F
+ */
+@theme {
+  --color-cream-50: #fffcf8;
+  --color-cream-100: #fbf5ee;
+  --color-cream-200: #f7ede3; /* logo background */
+  --color-cream-300: #efe1d3;
+  --color-sand-300: #e8d8c7;
+  --color-sand-400: #d5b79f;
+  --color-caramel-400: #c9a88c;
+  --color-caramel-500: #bc987e;
+  --color-brown-500: #a67c62;
+  --color-brown-600: #8a6249;
+  --color-brown-700: #74523d;
+  --color-brown-800: #624533; /* logo chocolate */
+  --color-brown-900: #46301f;
+  --color-brown-950: #2e1f14;
+  --color-rose-200: #f1dcd3;
+  --color-rose-300: #e2bfb0;
+  --color-rose-400: #d1a28e;
+  --color-rose-500: #c18875; /* logo ribbon */
+  --color-rose-600: #a56c5a;
+
+  --font-sans: "IBM Plex Sans Arabic", "Segoe UI", Tahoma, system-ui, sans-serif;
+  --font-display: "Cairo", "IBM Plex Sans Arabic", system-ui, sans-serif;
+
+  --radius-xl: 1rem;
+  --radius-2xl: 1.25rem;
+  --radius-3xl: 1.75rem;
+
+  --shadow-soft: 0 1px 2px rgb(98 69 51 / 0.04), 0 8px 24px -8px rgb(98 69 51 / 0.12);
+  --shadow-lift: 0 2px 4px rgb(98 69 51 / 0.05), 0 18px 40px -12px rgb(98 69 51 / 0.22);
+
+  --animate-float: float 7s ease-in-out infinite;
+  --animate-fade-up: fade-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-heart: heart 1.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(14px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes heart {
+    0% { opacity: 0; transform: scale(0.4); }
+    55% { opacity: 1; transform: scale(1.12); }
+    100% { opacity: 1; transform: scale(1); }
+  }
+}
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-cream-200 font-sans text-brown-900 antialiased;
+    font-feature-settings: "kern";
+    text-rendering: optimizeLegibility;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display text-brown-800;
+    line-height: 1.35;
+  }
+  ::selection {
+    @apply bg-rose-300 text-brown-950;
+  }
+  :focus-visible {
+    outline: 3px solid var(--color-rose-500);
+    outline-offset: 2px;
+    border-radius: 0.5rem;
+  }
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+  }
+  /* Phone numbers, references and dates stay left-to-right inside RTL text */
+  .ltr-nums {
+    direction: ltr;
+    unicode-bidi: isolate;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+  }
+  .paper {
+    background-color: var(--color-cream-200);
+    background-image:
+      radial-gradient(1200px 500px at 85% -10%, rgb(255 252 248 / 0.9), transparent 60%),
+      radial-gradient(900px 400px at 0% 110%, rgb(241 220 211 / 0.55), transparent 60%);
+  }
+  .section-title {
+    @apply font-display text-2xl font-extrabold text-brown-800 sm:text-3xl;
+  }
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-sm font-semibold text-rose-600;
+  }
+  .prose-daff h2 {
+    @apply mt-8 mb-3 text-xl font-bold;
+  }
+  .prose-daff p {
+    @apply mb-3 leading-8 text-brown-800/90;
+  }
+  .prose-daff ul {
+    @apply mb-4 list-disc space-y-1.5 ps-6 leading-8 text-brown-800/90 marker:text-rose-500;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Leaflet inside RTL pages */
+.leaflet-container {
+  direction: ltr;
+  font-family: var(--font-sans);
+  border-radius: var(--radius-2xl);
+}
+.leaflet-control-attribution {
+  font-size: 10px;
+}
