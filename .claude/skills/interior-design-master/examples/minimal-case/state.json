@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "caseId": "minimal-case",
+  "stage": "viewer",
+  "inputs": [],
+  "planVersion": "1",
+  "styleVersion": "1",
+  "conceptVersion": null,
+  "conceptRenderIds": [],
+  "productVersion": "1",
+  "userConfirmation": null,
+  "assumptions": [
+    "The plan is an authored demonstration flat, not a measured survey of any real dwelling.",
+    "Fixed kitchen and bathroom elements are dimension-plausible blocks, not manufacturer products."
+  ],
+  "unknowns": [
+    "True north bearing (plan.source.northDeg is null); the sun path shown is an illustrative orientation.",
+    "Door swing, appliance ventilation and accessibility clearances are unchecked.",
+    "Delivery access and packaging dimensions for the sofa product record."
+  ],
+  "lastReceipt": null
+}

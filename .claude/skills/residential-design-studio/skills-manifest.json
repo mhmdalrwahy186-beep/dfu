@@ -1,0 +1,508 @@
+{
+  "schema": "residential-design-studio.manifest.v1",
+  "installed": "2026-11-13",
+  "skills_dir": ".claude/skills",
+  "statuses": {
+    "working": "verified end to end in this project",
+    "needs-software": "files verified; runs once Blender 5.1+ and a Blender MCP server are set up",
+    "partial": "works with a known upstream bug to avoid",
+    "paid-opt-in": "installed, not activated; needs a paid account and the user's consent"
+  },
+  "sources": {
+    "acd": {
+      "repo": "https://github.com/Mhrnqaruni/ai-agent-skill-architectural-concept-design",
+      "commit": "93c3d79e296c1674136edfdf85ca67751c08e797",
+      "path": "skills/architectural-concept-design",
+      "version": "1.0.1",
+      "license": "MIT"
+    },
+    "idm": {
+      "repo": "https://github.com/akseolabs-seo/interior-design-master",
+      "commit": "68e3c690a4367cd2ee44e53bee0632c50b72f831",
+      "path": ".",
+      "version": "0.2.3",
+      "license": "MIT"
+    },
+    "arj": {
+      "repo": "https://github.com/arjun988/blender-skills",
+      "commit": "904f095d8f36a6e72adaebb08d07f884a074743d",
+      "path": ".claude/skills/<name>",
+      "version": "1.3.0",
+      "license": "MIT"
+    },
+    "bon": {
+      "repo": "https://github.com/ProfRino/bonsai-bim-skills",
+      "commit": "cc51dd8a7bc0d7443235439adf998baa6b4e9008",
+      "path": "skills/<name>",
+      "version": "0.2.0",
+      "license": "GPL-3.0"
+    },
+    "rob": {
+      "repo": "https://github.com/RobLe3/cc-blender-skill",
+      "commit": "a2634b588e80265e796aa53f8ab178d75105c2af",
+      "path": "plugin/skills/<name>",
+      "version": "1.4.0",
+      "license": "MIT"
+    },
+    "mel": {
+      "repo": "https://github.com/MeltFlexDevs/skills",
+      "commit": "f7aba096a31c14a86232aa6b99b38acbb7ce5558",
+      "path": "skills/<name>",
+      "version": "0.5.0",
+      "license": "MIT"
+    }
+  },
+  "shared_dirs": [
+    {
+      "name": "references",
+      "source": "arj",
+      "note": "shared notes used by the arjun988 skills via ../references/; not a skill"
+    }
+  ],
+  "not_installed": [
+    {
+      "name": "quality-refinement-autoloop",
+      "source": "rob",
+      "reason": "edits installed skill files; not needed for design work"
+    },
+    {
+      "name": "other cc-blender-skill skills (17)",
+      "source": "rob",
+      "reason": "mascot, logo, texture-atlas and animation reconstruction; outside residential design"
+    },
+    {
+      "name": "other arjun988 skills (83)",
+      "source": "arj",
+      "reason": "game-art styles, genres, rigging and VFX; outside residential design"
+    },
+    {
+      "name": "meltflex-mcp server",
+      "source": "mel",
+      "reason": "paid service; set up only after the user agrees"
+    }
+  ],
+  "skills": [
+    {
+      "name": "residential-design-studio",
+      "source": "local",
+      "stage": "router",
+      "status": "working",
+      "requires": [
+        "python3"
+      ],
+      "note": "Workflow and verifier written for this project."
+    },
+    {
+      "name": "architectural-concept-design",
+      "source": "acd",
+      "stage": "1-2",
+      "status": "working",
+      "requires": [
+        "python>=3.10"
+      ],
+      "note": "init/check/build verified; drawings, 3D page and Chromium renders produced.",
+      "python_packages": [
+        "ezdxf>=1.4,<2",
+        "PyMuPDF>=1.24",
+        "Pillow>=10"
+      ]
+    },
+    {
+      "name": "interior-design-master",
+      "source": "idm",
+      "stage": "4",
+      "status": "working",
+      "requires": [
+        "node>=20",
+        "npm"
+      ],
+      "note": "Script self-tests pass; viewer smoke test 17/17 on desktop and mobile. Optional CC0 textures download from dl.polyhaven.org.",
+      "node": true
+    },
+    {
+      "name": "archviz",
+      "source": "arj",
+      "stage": "7-8",
+      "status": "needs-software",
+      "requires": [
+        "blender>=5.1",
+        "blender-mcp"
+      ],
+      "note": "Guidance only (Markdown, no scripts). Cycles archviz pipeline verified headless on Blender 5.3."
+    },
+    {
+      "name": "environment-artist",
+      "source": "arj",
+      "stage": "5",
+      "status": "needs-software",
+      "requires": [
+        "blender>=5.1",
+        "blender-mcp"
+      ],
+      "note": "Guidance only (Markdown, no scripts). Cycles archviz pipeline verified headless on Blender 5.3."
+    },
+    {
+      "name": "vegetation-artist",
+      "source": "arj",
+      "stage": "5",
+      "status": "needs-software",
+      "requires": [
+        "blender>=5.1",
+        "blender-mcp"
+      ],
+      "note": "Guidance only (Markdown, no scripts). Cycles archviz pipeline verified headless on Blender 5.3."
+    },
+    {
+      "name": "set-dressing",
+      "source": "arj",
+      "stage": "4-5",
+      "status": "needs-software",
+      "requires": [
+        "blender>=5.1",
+        "blender-mcp"
+      ],
+      "note": "Guidance only (Markdown, no scripts). Cycles archviz pipeline verified headless on Blender 5.3."
+    },
+    {
+      "name": "materials",
+      "source": "arj",
+      "stage": "7-8",
+      "status": "needs-software",
+      "requires": [
+        "blender>=5.1",
+        "blender-mcp"
+      ],
+      "note": "Guidance only (Markdown, no scripts). Cycles archviz pipeline verified headless on Blender 5.3."
+    },
+    {
+      "name": "lighting",
+      "source": "arj",
+      "stage": "7-8",
+      "status": "needs-software",
+      "requires": [
+        "blender>=5.1",
+        "blender-mcp"
+      ],
+      "note": "Guidance only (Markdown, no scripts). Cycles archviz pipeline verified headless on Blender 5.3."
+    },
+    {
+      "name": "camera-cinematography",
+      "source": "arj",
+      "stage": "7-8",
+      "status": "needs-software",
+      "requires": [
+        "blender>=5.1",
+        "blender-mcp"
+      ],
+      "note": "Guidance only (Markdown, no scripts). Cycles archviz pipeline verified headless on Blender 5.3."
+    },
+    {
+      "name": "rendering",
+      "source": "arj",
+      "stage": "7-8",
+      "status": "needs-software",
+      "requires": [
+        "blender>=5.1",
+        "blender-mcp"
+      ],
+      "note": "Guidance only (Markdown, no scripts). Cycles archviz pipeline verified headless on Blender 5.3."
+    },
+    {
+      "name": "compositing",
+      "source": "arj",
+      "stage": "7-8",
+      "status": "needs-software",
+      "requires": [
+        "blender>=5.1",
+        "blender-mcp"
+      ],
+      "note": "Guidance only (Markdown, no scripts). Cycles archviz pipeline verified headless on Blender 5.3."
+    },
+    {
+      "name": "lookdev",
+      "source": "arj",
+      "stage": "7-8",
+      "status": "needs-software",
+      "requires": [
+        "blender>=5.1",
+        "blender-mcp"
+      ],
+      "note": "Guidance only (Markdown, no scripts). Cycles archviz pipeline verified headless on Blender 5.3."
+    },
+    {
+      "name": "realistic-style",
+      "source": "arj",
+      "stage": "7-8",
+      "status": "needs-software",
+      "requires": [
+        "blender>=5.1",
+        "blender-mcp"
+      ],
+      "note": "Guidance only (Markdown, no scripts). Cycles archviz pipeline verified headless on Blender 5.3."
+    },
+    {
+      "name": "bonsai-project-setup",
+      "source": "bon",
+      "stage": "3",
+      "status": "needs-software",
+      "requires": [
+        "blender>=5.1",
+        "blender-mcp",
+        "bonsai>=0.8.5 (Blender extension)"
+      ],
+      "note": "Helpers compile; every Bonsai class and bim.* operator they call exists in Bonsai 0.9.0. Not executed: needs Bonsai inside Blender."
+    },
+    {
+      "name": "bonsai-walls",
+      "source": "bon",
+      "stage": "3",
+      "status": "needs-software",
+      "requires": [
+        "blender>=5.1",
+        "blender-mcp",
+        "bonsai>=0.8.5 (Blender extension)"
+      ],
+      "note": "Helpers compile; every Bonsai class and bim.* operator they call exists in Bonsai 0.9.0. Not executed: needs Bonsai inside Blender."
+    },
+    {
+      "name": "bonsai-openings",
+      "source": "bon",
+      "stage": "3",
+      "status": "needs-software",
+      "requires": [
+        "blender>=5.1",
+        "blender-mcp",
+        "bonsai>=0.8.5 (Blender extension)"
+      ],
+      "note": "Helpers compile; every Bonsai class and bim.* operator they call exists in Bonsai 0.9.0. Not executed: needs Bonsai inside Blender."
+    },
+    {
+      "name": "bonsai-stairs",
+      "source": "bon",
+      "stage": "3",
+      "status": "needs-software",
+      "requires": [
+        "blender>=5.1",
+        "blender-mcp",
+        "bonsai>=0.8.5 (Blender extension)"
+      ],
+      "note": "Helpers compile; every Bonsai class and bim.* operator they call exists in Bonsai 0.9.0. Not executed: needs Bonsai inside Blender."
+    },
+    {
+      "name": "bonsai-roofs",
+      "source": "bon",
+      "stage": "3",
+      "status": "needs-software",
+      "requires": [
+        "blender>=5.1",
+        "blender-mcp",
+        "bonsai>=0.8.5 (Blender extension)"
+      ],
+      "note": "Helpers compile; every Bonsai class and bim.* operator they call exists in Bonsai 0.9.0. Not executed: needs Bonsai inside Blender."
+    },
+    {
+      "name": "bonsai-spaces-grid",
+      "source": "bon",
+      "stage": "3",
+      "status": "needs-software",
+      "requires": [
+        "blender>=5.1",
+        "blender-mcp",
+        "bonsai>=0.8.5 (Blender extension)"
+      ],
+      "note": "Helpers compile; every Bonsai class and bim.* operator they call exists in Bonsai 0.9.0. Not executed: needs Bonsai inside Blender."
+    },
+    {
+      "name": "bonsai-drawings",
+      "source": "bon",
+      "stage": "3",
+      "status": "needs-software",
+      "requires": [
+        "blender>=5.1",
+        "blender-mcp",
+        "bonsai>=0.8.5 (Blender extension)"
+      ],
+      "note": "Helpers compile; every Bonsai class and bim.* operator they call exists in Bonsai 0.9.0. Not executed: needs Bonsai inside Blender."
+    },
+    {
+      "name": "text-to-blender",
+      "source": "rob",
+      "stage": "6-8",
+      "status": "needs-software",
+      "requires": [
+        "blender>=5.1",
+        "blender-mcp"
+      ],
+      "note": "Code blocks run against Blender 5.3 headless; see verification.md."
+    },
+    {
+      "name": "blender-pro-workflow",
+      "source": "rob",
+      "stage": "6-8",
+      "status": "needs-software",
+      "requires": [
+        "blender>=5.1",
+        "blender-mcp"
+      ],
+      "note": "Code blocks run against Blender 5.3 headless; see verification.md."
+    },
+    {
+      "name": "blender-modeling",
+      "source": "rob",
+      "stage": "6-8",
+      "status": "needs-software",
+      "requires": [
+        "blender>=5.1",
+        "blender-mcp"
+      ],
+      "note": "Code blocks run against Blender 5.3 headless; see verification.md."
+    },
+    {
+      "name": "blender-materials",
+      "source": "rob",
+      "stage": "6-8",
+      "status": "needs-software",
+      "requires": [
+        "blender>=5.1",
+        "blender-mcp"
+      ],
+      "note": "Code blocks run against Blender 5.3 headless; see verification.md."
+    },
+    {
+      "name": "blender-lighting",
+      "source": "rob",
+      "stage": "6-8",
+      "status": "needs-software",
+      "requires": [
+        "blender>=5.1",
+        "blender-mcp"
+      ],
+      "note": "Code blocks run against Blender 5.3 headless; see verification.md."
+    },
+    {
+      "name": "blender-cameras",
+      "source": "rob",
+      "stage": "6-8",
+      "status": "needs-software",
+      "requires": [
+        "blender>=5.1",
+        "blender-mcp"
+      ],
+      "note": "Code blocks run against Blender 5.3 headless; see verification.md."
+    },
+    {
+      "name": "blender-rendering",
+      "source": "rob",
+      "stage": "6-8",
+      "status": "needs-software",
+      "requires": [
+        "blender>=5.1",
+        "blender-mcp"
+      ],
+      "note": "Code blocks run against Blender 5.3 headless; see verification.md."
+    },
+    {
+      "name": "blender-uv-texturing",
+      "source": "rob",
+      "stage": "6-8",
+      "status": "needs-software",
+      "requires": [
+        "blender>=5.1",
+        "blender-mcp"
+      ],
+      "note": "Code blocks run against Blender 5.3 headless; see verification.md."
+    },
+    {
+      "name": "blender-skill-harmonizer",
+      "source": "rob",
+      "stage": "6-8",
+      "status": "needs-software",
+      "requires": [
+        "blender>=5.1",
+        "blender-mcp"
+      ],
+      "note": "Code blocks run against Blender 5.3 headless; see verification.md."
+    },
+    {
+      "name": "reference-look-calibration",
+      "source": "rob",
+      "stage": "6-8",
+      "status": "needs-software",
+      "requires": [
+        "blender>=5.1",
+        "blender-mcp"
+      ],
+      "note": "Code blocks run against Blender 5.3 headless; see verification.md."
+    },
+    {
+      "name": "blender-export",
+      "source": "rob",
+      "stage": "9",
+      "status": "partial",
+      "requires": [
+        "blender>=5.1",
+        "blender-mcp"
+      ],
+      "note": "glTF recipe passes export_textures=, which Blender 5.3 rejects; drop that argument. See known-issues.md."
+    },
+    {
+      "name": "wireframe-to-3d",
+      "source": "rob",
+      "stage": "6",
+      "status": "partial",
+      "requires": [
+        "blender>=5.1",
+        "blender-mcp"
+      ],
+      "note": "Analyzer script works (OpenCV). One recipe sets DecimateModifier.use_collapse_degenerate, which does not exist. See known-issues.md.",
+      "python_packages": [
+        "opencv-python",
+        "numpy",
+        "scipy"
+      ]
+    },
+    {
+      "name": "meltflex-design",
+      "source": "mel",
+      "stage": "10",
+      "status": "paid-opt-in",
+      "requires": [
+        "MeltFlex paid subscription",
+        "MELTFLEX_API_KEY"
+      ],
+      "note": "Cloud API billed per generation. Not activated; ask the user first."
+    },
+    {
+      "name": "meltflex-furniture",
+      "source": "mel",
+      "stage": "10",
+      "status": "paid-opt-in",
+      "requires": [
+        "MeltFlex paid subscription",
+        "MELTFLEX_API_KEY"
+      ],
+      "note": "Cloud API billed per generation. Not activated; ask the user first."
+    },
+    {
+      "name": "meltflex-3d",
+      "source": "mel",
+      "stage": "10",
+      "status": "paid-opt-in",
+      "requires": [
+        "MeltFlex paid subscription",
+        "MELTFLEX_API_KEY"
+      ],
+      "note": "Cloud API billed per generation. Not activated; ask the user first."
+    },
+    {
+      "name": "meltflex-embed",
+      "source": "mel",
+      "stage": "-",
+      "status": "paid-opt-in",
+      "requires": [
+        "MeltFlex account"
+      ],
+      "note": "Instructions for an iframe embed; the site owner pays per design."
+    }
+  ]
+}

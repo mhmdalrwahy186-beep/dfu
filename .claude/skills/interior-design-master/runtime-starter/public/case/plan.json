@@ -1,0 +1,109 @@
+{
+  "version": 1,
+  "units": "m",
+  "source": {
+    "files": ["inputs/plan/authored-example.md"],
+    "coordinateSystem": "x-right-z-down, metres, y up; origin at the north-west outside corner of the envelope",
+    "scaleStatus": "confirmed",
+    "metresPerPixel": null,
+    "northDeg": null
+  },
+  "levels": [
+    {"id": "lvl-1", "name": "Single level", "elevation": 0, "ceilingHeight": 2.7}
+  ],
+  "rooms": [
+    {
+      "id": "rm-living",
+      "name": "客廳",
+      "kind": "living",
+      "status": "confirmed",
+      "connects": ["rm-kitchen", "rm-balcony"],
+      "boundary": [[0.2, 0.2], [4.7, 0.2], [4.7, 3.8], [0.2, 3.8]]
+    },
+    {
+      "id": "rm-kitchen",
+      "name": "廚房",
+      "kind": "kitchen",
+      "status": "confirmed",
+      "connects": ["rm-living", "rm-hall"],
+      "boundary": [[0.2, 3.92], [4.7, 3.92], [4.7, 5.8], [0.2, 5.8]]
+    },
+    {
+      "id": "rm-bedroom",
+      "name": "主臥",
+      "kind": "bedroom",
+      "status": "confirmed",
+      "connects": ["rm-hall"],
+      "boundary": [[4.82, 0.2], [8.02, 0.2], [8.02, 3.2], [4.82, 3.2]]
+    },
+    {
+      "id": "rm-bath",
+      "name": "衛浴",
+      "kind": "bath",
+      "status": "confirmed",
+      "connects": ["rm-hall"],
+      "boundary": [[6.22, 3.32], [8.02, 3.32], [8.02, 5.32], [6.22, 5.32]]
+    },
+    {
+      "id": "rm-hall",
+      "name": "玄關・走道",
+      "kind": "hall",
+      "status": "confirmed",
+      "connects": ["rm-kitchen", "rm-bedroom", "rm-bath"],
+      "boundary": [[4.82, 3.32], [6.1, 3.32], [6.1, 5.44], [8.02, 5.44], [8.02, 5.8], [4.82, 5.8]]
+    },
+    {
+      "id": "rm-balcony",
+      "name": "陽台",
+      "kind": "balcony",
+      "status": "confirmed",
+      "connects": ["rm-living"],
+      "boundary": [[1.0, -1.2], [3.4, -1.2], [3.4, 0.0], [1.0, 0.0]]
+    }
+  ],
+  "walls": [
+    {"id": "w-ext-n", "a": [0.1, 0.1], "b": [8.12, 0.1], "thickness": 0.2, "height": 2.7, "kind": "solid", "status": "confirmed"},
+    {"id": "w-ext-e", "a": [8.12, 0.1], "b": [8.12, 5.9], "thickness": 0.2, "height": 2.7, "kind": "solid", "status": "confirmed"},
+    {"id": "w-ext-s", "a": [8.12, 5.9], "b": [0.1, 5.9], "thickness": 0.2, "height": 2.7, "kind": "solid", "status": "confirmed"},
+    {"id": "w-ext-w", "a": [0.1, 5.9], "b": [0.1, 0.1], "thickness": 0.2, "height": 2.7, "kind": "solid", "status": "confirmed"},
+    {"id": "w-int-spine", "a": [4.76, 0.1], "b": [4.76, 5.9], "thickness": 0.12, "height": 2.7, "kind": "partition", "status": "confirmed"},
+    {"id": "w-int-kitchen", "a": [0.1, 3.86], "b": [4.76, 3.86], "thickness": 0.12, "height": 2.7, "kind": "partition", "status": "confirmed"},
+    {"id": "w-int-bedroom", "a": [4.76, 3.26], "b": [8.12, 3.26], "thickness": 0.12, "height": 2.7, "kind": "partition", "status": "confirmed"},
+    {"id": "w-int-bath-w", "a": [6.16, 3.26], "b": [6.16, 5.38], "thickness": 0.12, "height": 2.7, "kind": "partition", "status": "confirmed"},
+    {"id": "w-int-bath-s", "a": [6.16, 5.38], "b": [8.12, 5.38], "thickness": 0.12, "height": 2.7, "kind": "partition", "status": "confirmed"},
+    {"id": "w-parapet-n", "a": [1.0, -1.15], "b": [3.4, -1.15], "thickness": 0.1, "height": 1.05, "kind": "parapet", "status": "confirmed"},
+    {"id": "w-parapet-w", "a": [1.05, -1.2], "b": [1.05, 0.0], "thickness": 0.1, "height": 1.05, "kind": "parapet", "status": "confirmed"},
+    {"id": "w-parapet-e", "a": [3.35, -1.2], "b": [3.35, 0.0], "thickness": 0.1, "height": 1.05, "kind": "parapet", "status": "confirmed"}
+  ],
+  "openings": [
+    {"id": "op-door-entry", "type": "door", "a": [5.0, 5.9], "b": [5.9, 5.9], "sill": 0, "head": 2.1, "swing": 90, "inferred": false, "wall": "w-ext-s", "name": "大門"},
+    {"id": "op-door-bedroom", "type": "door", "a": [4.9, 3.26], "b": [5.8, 3.26], "sill": 0, "head": 2.1, "swing": 90, "inferred": false, "wall": "w-int-bedroom", "name": "主臥門"},
+    {"id": "op-door-bath", "type": "door", "a": [6.16, 3.9], "b": [6.16, 4.7], "sill": 0, "head": 2.1, "swing": -90, "inferred": false, "wall": "w-int-bath-w", "name": "衛浴門"},
+    {"id": "op-slide-balcony", "type": "sliding", "a": [1.2, 0.1], "b": [3.2, 0.1], "sill": 0, "head": 2.3, "swing": null, "inferred": false, "wall": "w-ext-n", "name": "陽台落地窗"},
+    {"id": "op-win-bedroom", "type": "window", "a": [5.6, 0.1], "b": [7.2, 0.1], "sill": 0.9, "head": 2.2, "swing": null, "inferred": false, "wall": "w-ext-n", "name": "主臥窗"},
+    {"id": "op-win-kitchen", "type": "window", "a": [0.1, 4.3], "b": [0.1, 5.4], "sill": 1.0, "head": 2.2, "swing": null, "inferred": false, "wall": "w-ext-w", "name": "廚房窗"},
+    {"id": "op-pass-kitchen", "type": "opening", "a": [3.3, 3.86], "b": [4.5, 3.86], "sill": 0, "head": 2.1, "swing": null, "inferred": false, "wall": "w-int-kitchen", "name": "客廳・廚房開口"},
+    {"id": "op-pass-hall", "type": "opening", "a": [4.76, 4.4], "b": [4.76, 5.4], "sill": 0, "head": 2.1, "swing": null, "inferred": false, "wall": "w-int-spine", "name": "廚房・走道開口"}
+  ],
+  "fixedElements": [
+    {"id": "fx-kitchen-counter", "kind": "kitchen-counter", "room": "rm-kitchen", "status": "confirmed", "bounds": {"x": 2.0, "z": 5.5, "width": 3.2, "depth": 0.6, "height": 0.9}},
+    {"id": "fx-kitchen-sink", "kind": "sink", "room": "rm-kitchen", "status": "confirmed", "bounds": {"x": 1.2, "z": 5.5, "width": 0.6, "depth": 0.5, "height": 0.95}},
+    {"id": "fx-kitchen-fridge", "kind": "appliance", "room": "rm-kitchen", "status": "confirmed", "bounds": {"x": 4.3, "z": 4.3, "width": 0.7, "depth": 0.7, "height": 1.8}},
+    {"id": "fx-bath-wc", "kind": "wc", "room": "rm-bath", "status": "confirmed", "bounds": {"x": 7.6, "z": 3.8, "width": 0.4, "depth": 0.68, "height": 0.78}},
+    {"id": "fx-bath-basin", "kind": "basin", "room": "rm-bath", "status": "confirmed", "bounds": {"x": 6.6, "z": 3.7, "width": 0.6, "depth": 0.45, "height": 0.86}},
+    {"id": "fx-bath-shower", "kind": "shower", "room": "rm-bath", "status": "confirmed", "bounds": {"x": 7.0, "z": 4.8, "width": 0.9, "depth": 0.9, "height": 2.0}},
+    {"id": "fx-bedroom-wardrobe", "kind": "wardrobe", "room": "rm-bedroom", "status": "confirmed", "bounds": {"x": 7.7, "z": 1.8, "width": 0.6, "depth": 2.0, "height": 2.2}}
+  ],
+  "routes": [
+    {"id": "rt-entry-to-living", "status": "confirmed", "width": 0.9, "points": [[5.45, 5.65], [5.45, 4.9], [4.2, 4.9], [3.9, 4.4], [3.9, 2.0]]},
+    {"id": "rt-hall-to-bedroom", "status": "confirmed", "width": 0.9, "points": [[5.35, 4.2], [5.35, 3.26], [5.35, 2.4]]},
+    {"id": "rt-hall-to-bath", "status": "confirmed", "width": 0.8, "points": [[5.7, 4.3], [6.6, 4.3]]}
+  ],
+  "assumptions": [
+    {"id": "as-authored", "statement": "This plan is an authored demonstration flat, not a survey of a real dwelling. Every dimension is 'confirmed' only in the sense that the author fixed it; it proves nothing about any building.", "status": "confirmed", "basis": "authored example shipped with the skill"},
+    {"id": "as-north", "statement": "source.northDeg is null. The viewer labels its sun direction as an illustrative orientation until a real north bearing is supplied.", "status": "unknown", "basis": "no site data for an invented plan"},
+    {"id": "as-structure", "statement": "Wall thicknesses (0.2 m external, 0.12 m partition) are plausible residential values chosen by the author; no structural, acoustic or fire rating is implied.", "status": "confirmed", "basis": "authored example"},
+    {"id": "as-fixtures", "statement": "Fixed kitchen and bathroom elements are dimension-plausible blocks for layout study. They are not manufacturer products and carry no plumbing or ventilation verification.", "status": "confirmed", "basis": "authored example"},
+    {"id": "as-clearance", "statement": "Door swings, appliance ventilation gaps and accessibility clearances have not been checked against any code.", "status": "unknown", "basis": "out of scope for a demonstration case"}
+  ]
+}

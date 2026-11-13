@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "caseId": "minimal-case",
+  "displayName": "Minimal example flat",
+  "locale": "en",
+  "region": "GB",
+  "productResearch": {"required": true, "currency": "GBP"},
+  "stage": "viewer",
+  "inputs": {
+    "plan": ["inputs/plan/authored-example.md"],
+    "style": [],
+    "products": [],
+    "measurements": []
+  },
+  "notes": [
+    "This case ships with the interior-design-master skill as a runnable example for runtime-starter. The plan is authored, not surveyed.",
+    "Exactly one product record is included, so the product panel, evidence badges and the fit report have real data to render."
+  ]
+}

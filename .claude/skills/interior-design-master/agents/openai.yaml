@@ -1,0 +1,8 @@
+interface:
+  display_name: "Interior Design Master"
+  short_description: "Turn floor plans and style references into an evidence-aware residential 3D viewer"
+  brand_color: "#B9834F"
+  default_prompt: "Use $interior-design-master to turn these floor-plan and style-reference images into 2-4 concept renders first, then a source-backed interactive residential 3D viewer built on the bundled runtime-starter. Respond in English by default unless the user asks for another language."
+
+policy:
+  allow_implicit_invocation: true

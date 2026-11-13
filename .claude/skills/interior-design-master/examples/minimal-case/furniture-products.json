@@ -1,0 +1,67 @@
+[
+  {
+    "id": "prd-sofa-ektorp-3seat",
+    "role": "sofa",
+    "brand": "IKEA",
+    "model": "EKTORP",
+    "variant": "Hakebo dark grey",
+    "name": "EKTORP 3-seat sofa, Hakebo dark grey",
+    "market": "GB",
+    "research": {
+      "queries": [
+        "IKEA EKTORP 3-seat sofa dimensions site:ikea.com",
+        "ikea.com/gb EKTORP 3 seater sofa measurements"
+      ],
+      "candidateUrls": [
+        "https://www.ikea.com/gb/en/p/ektorp-3-seat-sofa-hakebo-dark-grey-s79509000/",
+        "https://www.ikea.com/gb/en/p/ektorp-three-seat-sofa-frame-60185029/",
+        "https://www.ikea.com/gb/en/p/ektorp-3-seat-sofa-with-chaise-longue-hakebo-grey-green-s89509033/"
+      ],
+      "selectedReason": "Official IKEA GB product page reachable at task time, publishing complete outer measurements for a single fixed variant. The 2180 mm width sits inside the authored living room's 4500 mm north wall, so it exercises the fit check without failing it.",
+      "rejected": [
+        {"url": "https://www.ikea.com/gb/en/p/ektorp-3-seat-sofa-with-chaise-longue-hakebo-grey-green-s89509033/", "reason": "2520 x 1630 mm chaise version leaves under 800 mm walking clearance in the authored living room"}
+      ]
+    },
+    "dimensionsMm": {
+      "width": 2180,
+      "depth": 880,
+      "height": 880,
+      "widthStatus": "confirmed",
+      "depthStatus": "confirmed",
+      "heightStatus": "confirmed"
+    },
+    "dimensionSourceUrl": "https://www.ikea.com/gb/en/p/ektorp-3-seat-sofa-hakebo-dark-grey-s79509000/",
+    "evidence": [
+      {
+        "sourceUrl": "https://www.ikea.com/gb/en/p/ektorp-3-seat-sofa-hakebo-dark-grey-s79509000/",
+        "sourceType": "official",
+        "retrievedAt": "2026-09-10T00:00:00Z",
+        "dimensionQuote": "Width 218 cm; Depth 88 cm; Height including back cushions 88 cm; Seat depth 49 cm; Seat height 45 cm; Armrest width 24 cm",
+        "notes": "Measurements read from the manufacturer's own GB product page. Height is the value IKEA labels 'height including back cushions'."
+      }
+    ],
+    "purchaseUrl": "https://www.ikea.com/gb/en/p/ektorp-3-seat-sofa-hakebo-dark-grey-s79509000/",
+    "price": {"amount": 549, "currency": "GBP", "asOf": "2026-09-10T00:00:00Z"},
+    "geometry": {
+      "source": "procedural-proxy",
+      "assetPath": null,
+      "scaleStatus": "confirmed",
+      "pivotStatus": "normalized"
+    },
+    "fit": {
+      "status": "warn",
+      "reasons": [
+        "2180 mm width fits the authored living room's 4500 mm span with 1160 mm spare per side",
+        "880 mm depth leaves about 1.5 m of walking space to the balcony door line"
+      ],
+      "unknowns": [
+        "delivery route, lift and doorway clearances are not checked",
+        "packaging dimensions are not published on the page that was read",
+        "seat comfort, cover availability and lead time are not verified"
+      ]
+    },
+    "notes": [
+      "The scene object is a dimension-accurate procedural proxy, not IKEA's own mesh. Shape is indicative; only width, depth and height come from the source."
+    ]
+  }
+]

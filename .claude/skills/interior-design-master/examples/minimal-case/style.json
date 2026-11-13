@@ -1,0 +1,75 @@
+{
+  "version": 1,
+  "styles": [
+    {
+      "id": "st-warm-oak",
+      "name": "暖橡自然",
+      "summary": "淺橡木、亞麻與奶油白為主的日常自然感；木質溫度撐起小坪數的開放感。",
+      "references": [],
+      "palette": [
+        {"name": "奶油白", "hex": "#efe9dc", "role": "wall"},
+        {"name": "淺橡木", "hex": "#c8ab80", "role": "wood"},
+        {"name": "亞麻米", "hex": "#d8cdb6", "role": "fabric"},
+        {"name": "石灰岩", "hex": "#e6e2d7", "role": "floor"},
+        {"name": "赤陶", "hex": "#a9683f", "role": "accent"}
+      ],
+      "materials": [
+        {"surface": "wall", "description": "細砂質乳膠漆，低反射", "status": "inferred"},
+        {"surface": "floor", "description": "淺色石紋磚，微清漆面", "status": "inferred"},
+        {"surface": "cabinetry", "description": "淺橡木貼皮，直紋", "status": "inferred"},
+        {"surface": "upholstery", "description": "粗織亞麻，可拆洗", "status": "inferred"}
+      ],
+      "lighting": {
+        "description": "白天以陽台落地窗為主光；夜間主照明 3000K，展示層架另加重點照明。",
+        "azimuthDeg": null,
+        "elevationDeg": null,
+        "status": "inferred"
+      },
+      "rules": [
+        "沙發背牆保持完整，不做滿版收納",
+        "走道淨寬不小於 0.8 m",
+        "衛浴僅放置裝飾與植栽，不放布面家具"
+      ],
+      "furnitureRoles": [
+        {"id": "fr-living-sofa", "role": "sofa", "room": "rm-living", "required": true, "maxWidth": 2.4, "maxDepth": 1.0, "clearance": 0.8},
+        {"id": "fr-living-coffee", "role": "coffee table", "room": "rm-living", "required": false, "maxWidth": 1.2, "maxDepth": 0.7, "clearance": 0.4},
+        {"id": "fr-living-tv", "role": "tv", "room": "rm-living", "required": false, "maxWidth": 1.7, "maxDepth": 0.45, "clearance": null},
+        {"id": "fr-bedroom-bed", "role": "bed", "room": "rm-bedroom", "required": true, "maxWidth": 1.6, "maxDepth": 2.1, "clearance": 0.6},
+        {"id": "fr-bedroom-desk", "role": "desk", "room": "rm-bedroom", "required": false, "maxWidth": 1.2, "maxDepth": 0.6, "clearance": 0.7}
+      ]
+    },
+    {
+      "id": "st-quiet-slate",
+      "name": "靜謐石灰",
+      "summary": "冷灰、深胡桃與霧面金屬；相同格局下更安靜、對比更強的版本。",
+      "references": [],
+      "palette": [
+        {"name": "霧灰", "hex": "#dcdcd8", "role": "wall"},
+        {"name": "胡桃木", "hex": "#6f5340", "role": "wood"},
+        {"name": "炭灰布", "hex": "#5b6165", "role": "fabric"},
+        {"name": "水泥灰", "hex": "#cfccc4", "role": "floor"},
+        {"name": "苔綠", "hex": "#5d6b4f", "role": "accent"}
+      ],
+      "materials": [
+        {"surface": "wall", "description": "礦物塗料，霧面", "status": "inferred"},
+        {"surface": "floor", "description": "水泥質感大板磚", "status": "inferred"},
+        {"surface": "cabinetry", "description": "深胡桃木，霧面把手", "status": "inferred"},
+        {"surface": "upholstery", "description": "炭灰緊織布", "status": "inferred"}
+      ],
+      "lighting": {
+        "description": "重點照明比例提高，色溫 2700K，牆面洗牆光取代大面主燈。",
+        "azimuthDeg": null,
+        "elevationDeg": null,
+        "status": "inferred"
+      },
+      "rules": [
+        "深色只用於家具與櫃體，牆面維持淺色以保留空間感",
+        "走道淨寬不小於 0.8 m"
+      ],
+      "furnitureRoles": [
+        {"id": "fr2-living-sofa", "role": "sofa", "room": "rm-living", "required": true, "maxWidth": 2.4, "maxDepth": 1.0, "clearance": 0.8},
+        {"id": "fr2-bedroom-bed", "role": "bed", "room": "rm-bedroom", "required": true, "maxWidth": 1.6, "maxDepth": 2.1, "clearance": 0.6}
+      ]
+    }
+  ]
+}
