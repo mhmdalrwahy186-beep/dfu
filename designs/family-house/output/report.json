@@ -1,0 +1,37 @@
+{
+  "design": "/home/user/dfu/designs/family-house/design.json",
+  "engine": "1.0.1",
+  "checks": {
+    "errors": 0,
+    "warnings": 0,
+    "findings": []
+  },
+  "outputs": {
+    "drawings_pdf": "/home/user/dfu/designs/family-house/output/drawings/concept-drawings.pdf",
+    "true_size_dxf": "/home/user/dfu/designs/family-house/output/drawings/model_1to1_metres.dxf",
+    "sheets": [
+      "A-000_cover-and-area-schedule",
+      "A-100_site-plan",
+      "A-101_ground-floor-plan",
+      "A-102_first-floor-plan",
+      "A-201_elevations-south-and-north",
+      "A-202_elevations-east-and-west",
+      "A-301_section-a-a"
+    ],
+    "model_html": "/home/user/dfu/designs/family-house/output/model/index.html",
+    "renders": [
+      "/home/user/dfu/designs/family-house/output/model/renders/01_building-front.png",
+      "/home/user/dfu/designs/family-house/output/model/renders/02_building-rear.png",
+      "/home/user/dfu/designs/family-house/output/model/renders/03_first-floor.png",
+      "/home/user/dfu/designs/family-house/output/model/renders/04_first-floor-rear.png",
+      "/home/user/dfu/designs/family-house/output/model/renders/05_ground-floor.png",
+      "/home/user/dfu/designs/family-house/output/model/renders/06_ground-floor-rear.png"
+    ],
+    "area_schedule": "/home/user/dfu/designs/family-house/output/area-schedule.md"
+  },
+  "dxf_audit": [],
+  "built_area": {
+    "G": 119.7,
+    "F": 119.7
+  }
+}
